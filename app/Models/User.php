@@ -17,15 +17,20 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'lastname',
+        'nombre',
+        'apellido',
+        'nif',
+        'telefono',
+        'fecha_nacimiento',
+        'genero',
+        'role',
         'email',
         'password',
-        'phone',
-        'nif',
-        'date_of_birth',
-        'gender',
     ];
+
+    public function trips(){
+        return $this->belongsToMany('App\Models\Trip');
+    }
 
 
     /**

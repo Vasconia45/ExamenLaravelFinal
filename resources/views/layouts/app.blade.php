@@ -34,7 +34,7 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
+                            {{ Auth::user()->nombre }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -62,9 +62,9 @@
           </div>
 
           <div class="links">
-              <a href="#">@lang('messages.administration')</a>
-              <a href="#">@lang('messages.trip_driver')</a>
-              <a href="/">@lang('messages.future_trips')</a>
+              <a href="{{ route('showAdministracion')}}">@lang('messages.administration')</a>
+              <a href="{{ route('showTripsDrivers')}}">@lang('messages.trip_driver')</a>
+              <a href="{{ route('showTrips')}}">@lang('messages.future_trips')</a>
               <a href="/">@lang('messages.middleware')</a>
           </div>
           <hr><br><br>

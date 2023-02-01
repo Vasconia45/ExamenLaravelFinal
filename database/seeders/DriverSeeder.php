@@ -30,6 +30,7 @@ class DriverSeeder extends Seeder
                 'apellidos'=> $apellidos[random_int(0,6)],
                 'valoracion'=>$valoracion[random_int(0,10)],
                 'kilometros' => random_int(10, 250),
+                'trip_id' => random_int(1, 10),
             ]);
         }
     }

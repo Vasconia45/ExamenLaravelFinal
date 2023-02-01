@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'nombre' => "admin",
             'email' => "admin@zubirimanteo.com",
             'password' => bcrypt("password"),
+            'role' => 1,
         ]);
 
         $firstNames = ['Oliver', 'Mary', 'Harry', 'Jane', 'Noah', 'Emily',
@@ -42,6 +43,7 @@ class UserSeeder extends Seeder
                 'telefono' => random_int(610000000, 699999999),
                 'fecha_nacimiento' => Carbon::today()->subDays(rand(-200, 365)),
                 'genero' => $gender,
+                'role' => 2,
                 'email' => $firstNames[$randomName] . $lastnames[$randomLastName] . $i . "@zubirimanteo.com",
                 'password' => bcrypt("password"),
             ]);

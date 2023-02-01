@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Trip;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/trips/{destino}', function($destino){
+    $trips = Trip::where('destino', $destino)
+    ->where('plazas', '<' , 4)
+    ->get();
+    foreach($trips as $trip){
+        echo $trip;
+        echo "<br>";
+    }
 });
